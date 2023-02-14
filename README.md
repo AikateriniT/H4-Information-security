@@ -3,7 +3,7 @@
 
 In this class we talked about encryption and hashes and utilized hashcat in order to crack passwords which are encryptes behind hashes. 
 
-x) Read and summarize (This subtask x does not require tests with a computer. Some bullets per article is enough for your summary, feel free to write more if you like)
+x) READ AND SUMMARIZE (This subtask x does not require tests with a computer. Some bullets per article is enough for your summary, feel free to write more if you like)
 € Schneier 2015: Applied Cryptography: 2.3 One-Way Functions and 2.4 One-Way Hash Functions.
 
 ----------------------------------------------------------------------------------
@@ -38,7 +38,7 @@ a) Install Hashcat. See Karvinen 2022: Cracking Passwords with Hashcat
 ----------------------------------------------------------------------------------
 
 IN CLASS TASK: CRACK THE PASSWORD WITH HASHCAT
-
+__________________________________________________________________________________________
 It is the first time that I have to something with hashcat and password cracking in genaral so it is quite interesting for me. The directions were quite straight-forward and easy to follow, so lets see how did it go. 
 
 The hash to be cracked was: 
@@ -69,10 +69,34 @@ For the next step we must identify the type of the hash:
 We take a guess that the password is of MD5 [Hashcat Mode: 0], so we give the command:
 
     $ hashcat -m 0 '6b1628b016dff46e6fa35684be6acc96' rockyou.txt -o solved
+    
+![Capture](https://user-images.githubusercontent.com/113516460/218860522-ff47ec19-4ad5-492a-9695-d132da2e1bfd.JPG)
+    
 Which basically means that the hash program we just installed with the type 0 (MD5) will crack the 95cd3fc01819b69d1a4900e6fe3d293c hash and will save the solution as plain text to a new file named solved. After a while the hash is cracked and the password is: peaches.
 I order to display the answer we write the command 
 
     cat solved
+
+HOMEWORK HASH CRACKING
+____________________________________________________________________________________________
+We have all the material ready from the in-class assignment so we can start this straight from the hashid step. 
+
+   cd hashed
+   hashid -m 8eb8e307a6d649bc7fb51443a06a216f
+   
+![hash type](https://user-images.githubusercontent.com/113516460/218860546-ce121d54-ada2-4ed3-9bff-3140165a0f6d.JPG)
+
+I will suppose that it is MD5 type. So it will be:
+
+   hashcat -m 0 '8eb8e307a6d649bc7fb51443a06a216f' -o solved
+   
+![´homework](https://user-images.githubusercontent.com/113516460/218862077-9d9d421c-2bdf-45b5-8bef-bdcc7cf610bc.JPG)
+
+   cat solved 
+   and we see both passwords from the assignments
+   peaches & february
+
+
 
 
 SOURCES
