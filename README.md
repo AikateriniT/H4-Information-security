@@ -96,6 +96,49 @@ I will suppose that it is MD5 type. So it will be:
    and we see both passwords from the assignments
    peaches & february
 
+c) Compile John the Ripper, Jumbo version. Karvinen 2023: Crack File Password With John.
+------------------------------------------------------------------------------------
+
+In this task we will learn how break passwords with the John dictionary. From the previous task we have to go one directory back so: cd ..
+
+and then we start installing all the usefull tools. 
+   
+   sudo apt-get update
+   sudo apt-get install libssl libssl-dev zlib1g zlib1g-dev zlib-gst git
+   Y
+   
+and the process is finished
+   
+   git clone --depth=1 https://github.com/openwall/john.git
+   $ cd john/src/	
+   $ ./configure
+   $ make -s clean && make -sj4
+   
+We have to make sure that John is up and running so:
+   
+   $ $HOME/john/run/john 
+If we get the message John the Ripper 1.9.0-jumbo-1+bleeding-3423642 2023-01-19 00:38:00 +0100 OMP [linux-gnu 64-bit x86_64 AVX2 AC] ... then it means that we've achieved what we wanted and it is compiled and running. 
+
+For this task we will download a zip file from 
+
+   $ wget https://TeroKarvinen.com/2023/crack-file-password-with-john/tero.zip 
+   $ $HOME/john/run/zip2john tero.zip >tero.zip.hash
+   
+The password is already cracked for this so by writting butterfly we get the message:
+
+   $ cat secretFiles/SECRET.md 
+   
+![final](https://user-images.githubusercontent.com/113516460/218870912-d6082893-6a8c-47da-aa30-73813f6d16a3.JPG)
+  
+   
+   
+   
+   
+   
+   
+   
+
+      
 
 
 
