@@ -104,6 +104,16 @@ In this task we will learn how break passwords with the John dictionary. From th
 and then we start installing all the usefull tools. 
 
     sudo apt-get update
+
+At this point there was an obstacle to the process, because I typed the command from terokarvinen.com, I made a small typo and I received an error message. 
+
+    $ sudo apt-get -y install micro bash-completion git build-essential libssl-dev zlib1g zlib1g-dev zlib-gst 
+    libbz2-1.0 libbz2-dev atool zip wget
+
+![Capture](https://user-images.githubusercontent.com/113516460/218981971-2a32aa9a-9ab8-417d-8db4-f590dd4f67e7.JPG)
+
+So, I decided to use the command from the screenshot I took during the last week course and it worked.
+
     sudo apt-get install libssl libssl-dev zlib1g zlib1g-dev zlib-gst git
     Y
    
@@ -114,6 +124,8 @@ and the process is finished
     $ ./configure
     $ make -s clean && make -sj4
    
+![john running](https://user-images.githubusercontent.com/113516460/218982570-c8a85c06-ddc9-4ad1-8788-857badc5cbec.JPG)
+
 We have to make sure that John is up and running so:
      
     $ $HOME/john/run/john 
